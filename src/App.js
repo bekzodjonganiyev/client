@@ -8,7 +8,7 @@ const io = require("socket.io-client");
 const socket = io("https://adsfgasgf.herokuapp.com/", {
   withCredentials: true,
   extraHeaders: {
-    "my-custom-header": "abcd"
+    "Access-Control-Allow-Origin": "*"
   }
 });
 
