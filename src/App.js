@@ -1,9 +1,18 @@
 import React, { useState } from 'react'
-import io from "socket.io-client"
+// import io from "socket.io-client"
 import "./App.css"
 import Chat from './Chat'
 
-const socket = io.connect("https://adsfgasgf.herokuapp.com/")
+const io = require("socket.io-client");
+
+const socket = io("https://adsfgasgf.herokuapp.com/", {
+  withCredentials: true,
+  extraHeaders: {
+    "my-custom-header": "abcd"
+  }
+});
+
+// const socket = io.connect("https://adsfgasgf.herokuapp.com/")
 
 const App = () => {
     const [name, setName] = useState()
