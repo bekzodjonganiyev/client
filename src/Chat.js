@@ -54,7 +54,7 @@ const Chat = ({ socket, name, roomID }) => {
                                     </div>
                                     <div className='message-meta'>
                                         <p id="time">{messageContent.time}</p>
-                                        <p id="author">{messageContent.name}</p>
+                                        <p id="author">{messageContent.author}</p>
                                     </div>
                                 </div>
                             </div>

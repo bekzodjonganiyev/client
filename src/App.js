@@ -3,16 +3,7 @@ import io from "socket.io-client"
 import "./App.css"
 import Chat from './Chat'
 
-// const io = require("socket.io-client");
-
-// const socket = io("https://adsfgasgf.herokuapp.com/", {
-//   withCredentials: true,
-//   extraHeaders: {
-//     "Access-Control-Allow-Origin": "*"
-//   }
-// });
-
-const socket = io.connect("https://adsfgasgf.herokuapp.com/")
+const socket = io.connect("http://localhost:3001")
 
 const App = () => {
     const [name, setName] = useState()
@@ -23,10 +14,8 @@ const App = () => {
         if (name !== "" && roomID !== "") {
             socket.emit("join_room", roomID)
         }
-
         setShowChat(true)
     }
-
     return (
         <div className='App'>
             {
